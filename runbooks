@@ -1,1 +1,53 @@
+# SSH Service Failed
 
+## Problem
+
+Unable to connect to the server using SSH.
+
+---
+
+## Symptoms
+
+- Connection refused
+- SSH timeout
+- SSH service inactive
+
+---
+
+## Investigation
+
+Check service status:
+
+```bash
+systemctl status ssh
+```
+
+Check logs:
+
+```bash
+journalctl -u ssh
+```
+
+---
+
+## Resolution
+
+Restart SSH:
+
+```bash
+sudo systemctl restart ssh
+```
+
+Verify:
+
+```bash
+sudo systemctl status ssh
+```
+
+---
+
+## Prevention
+
+- Monitor SSH service
+- Enable alerts
+- Review logs regularly
